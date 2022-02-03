@@ -1,29 +1,29 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios';
-import { CLIENT_URL } from '../services/constants';
+import { Constants } from '../services/Constants';
+// import Gif from './Gif';
 
 function RandomGif(){
     const [gifs, setGifs] = useState([]);
     const fetchData = async () => {
         try {
-          const response = await axios.get(CLIENT_URL);
-          const { results } = response.data.data.images.fixed_height_small_still.url;
-        
-          console.log(results);
-          setGifs(results);
+          const response = await Constants();
+          setGifs(response.data.images.original.url);
         } catch (error) {
           console.log(error);
         }
       }
+    console.log(fetchData)
 
     useEffect(() => {
       fetchData();
     }, [])
     
     return(
-      
-        <img src={gifs}></img>
-
+        <div>
+            <img alt="random gif" src={gifs} />
+            <br></br>
+            <button onClick={fetchData}>Get New Gif</button>
+        </div>
     )
 }
 export default RandomGif;
