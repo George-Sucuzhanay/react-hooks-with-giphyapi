@@ -1,8 +1,8 @@
 import './App.css';
 import { NavLink, Route, Routes } from 'react-router-dom';
-import Header from './components/Header';
-import RandomGif from './components/RandomGif';
-import Search from './components/Search';
+import Header from './screens/Header';
+import RandomGif from './screens/RandomGif';
+import Search from './screens/Search';
 
 
 function App() {
