@@ -20,9 +20,10 @@ function RandomGif(){
     
     return(
         <div>
+            <button onClick={fetchData}>Get New Gif</button>
+            <br></br>
             <img alt="random gif" src={gifs} />
             <br></br>
-            <button onClick={fetchData}>Get New Gif</button>
         </div>
     )
 }
